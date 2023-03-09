@@ -20,8 +20,8 @@ jobs:
       run: |
         formatted=$(awk '{printf "%-6s %-15s %s-%s %s\n", $1, $2, $3, $4, $5}' data.txt)
         echo $formatted
-        echo 'formatted<<EOF' >> $GITHUB_OUTPUT
-        echo "$formatted-data=$formatted" >> $GITHUB_OUTPUT
+        echo 'formatted-data<<EOF' >> $GITHUB_OUTPUT
+        echo "$formatted" >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
         
   print-data:
