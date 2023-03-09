@@ -15,6 +15,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Read and format data
+      shell: bash
       id: format-data
       run: |
         formatted=$(awk '{printf "%-6s %-15s %s-%s %s\n", $1, $2, $3, $4, $5}' data.txt)
