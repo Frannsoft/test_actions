@@ -9,7 +9,7 @@ jobs:
   format-data:
     runs-on: ubuntu-latest
     outputs:
-      formatted-data
+      formatted-data: ${{ steps.format-data.outputs.formatted-data }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
