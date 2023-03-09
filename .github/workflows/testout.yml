@@ -27,4 +27,4 @@ jobs:
     needs: [format-data]
     steps:
     - name: Print formatted data
-      run: echo ${{ steps.format-data.outputs.formatted-data }}
+      run: echo "${{ steps.format-data.outputs.formatted-data }}"
