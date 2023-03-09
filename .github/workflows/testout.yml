@@ -19,7 +19,7 @@ jobs:
       id: format-data
       run: |
         formatted=$(awk '{printf "%-6s %-15s %s-%s %s\n", $1, $2, $3, $4, $5}' data.txt)
-        echo $formatted
+        EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
         echo 'formatted-data<<EOF' >> $GITHUB_OUTPUT
         echo "$formatted" >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
