@@ -8,7 +8,8 @@ on:
 jobs:
   format-data:
     runs-on: ubuntu-latest
-
+    outputs:
+      formatted-data
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -19,5 +20,9 @@ jobs:
         formatted=$(awk '{printf "%-6s %-15s %s-%s %s\n", $1, $2, $4, $3, $5}' data.txt)
         echo "formatted-data=formatted" >> $GITHUB_OUTPUT
         
+  print-data:
+    runs-on: ubuntu-latest
+    needs: [format-data]
+    steps:
     - name: Print formatted data
       run: echo "${{ steps.format-data.outputs.formatted-data }}"
