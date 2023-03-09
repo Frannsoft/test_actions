@@ -1,3 +1,3 @@
-John   Doe      one         2023-03-08 80
-Jane   Smith    two         2023-03-09 90
-Mike   Johnson  three       2023-03-10 75
+John   Doe      one     pizza    2023-03-08 80
+Jane   Smith    two     steak    2023-03-09 90
+Mike   Johnson  three   pasta    2023-03-10 75
