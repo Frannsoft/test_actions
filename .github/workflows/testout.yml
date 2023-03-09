@@ -19,7 +19,7 @@ jobs:
       run: |
         formatted=$(awk '{printf "%-6s %-15s %s-%s %s\n", $1, $2, $3, $4, $5}' data.txt)
         formatted="${formatted//$'\n'/'%0A'}"
-        echo "formatted-data=$formatted" >> $GITHUB_OUTPUT
+        echo "formatted-data=$(formatted)" >> $GITHUB_OUTPUT
         
   print-data:
     runs-on: ubuntu-latest
